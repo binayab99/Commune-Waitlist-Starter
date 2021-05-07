@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap");
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  font-size: 18px;
+  color: hsl(255, 43%, 28%);
+  background-color: hsl(218, 80%, 98%);
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0;
+  width: 700px;
+}
+
+a {
+  text-decoration: none;
+  color: hsl(0, 0%, 33%);
+  font-size: 1.1rem;
+}
+
+form {
+  display: flex;
+  gap: 1rem;
+}
+
+input {
+  height: 50px;
+  width: 350px;
+  padding-left: 1rem;
+  color: rgb(181, 182, 183);
+  border-radius: 10px;
+  border: 1px solid rgb(221, 223, 231);
+
+  &:focus {
+    outline: none;
+  }
+}
+
+button {
+  background-color: hsl(255, 43%, 28%);
+  color: white;
+  border: 0;
+  font-size: 1.1rem;
+  height: 50px;
+  width: 146px;
+  border-radius: 5px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.container {
+  max-width: 1440px;
+
+  padding: 3rem 7rem;
+  margin: auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+
+  .logo {
+    width: 146px;
+    height: 36px;
+    background: url(/Assets/Logo.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: auto 0;
+  }
+
+  nav {
+    .links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+  }
+
+  .menu {
+    display: none;
+
+    .dash {
+      border: 2px;
+      width: 10px;
+      height: 2px;
+      color: black;
+    }
+  }
+}
+
+.hero {
+  display: flex;
+  margin: 5rem 0;
+
+  &-text {
+    flex: 2;
+
+    p {
+      &:first-of-type {
+        background-color: hsl(255, 43%, 28%);
+        color: hsl(258, 43%, 83%);
+        width: 480px;
+        text-align: center;
+        padding: 0.5rem 0;
+        border-radius: 20px;
+
+        a {
+          color: hsl(258, 43%, 83%);
+          text-decoration: underline;
+        }
+      }
+
+      &:nth-of-type(2) {
+        width: 730px;
+      }
+    }
+  }
+
+  &-image {
+    flex: 1;
+    width: 696px;
+    height: 500px;
+    background: url(/Assets/Illustration.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+footer {
+  .companies {
+    display: flex;
+    gap: 1rem;
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    .atlassian {
+      background: url("/Assets/Atlassian\ Icon.svg");
+    }
+
+    .behance {
+      background: url("/Assets/Behance\ Icon.svg");
+    }
+
+    .bing {
+      background: url("/Assets/Bing\ Icon.svg");
+    }
+
+    .bitbucket {
+      background: url("/Assets/Bitbucket\ Icon.svg");
+    }
+
+    .dropbox {
+      background: url("/Assets/Dropbox\ Icon.svg");
+    }
+
+    .twitch {
+      background: url("/Assets/Twitch\ Icon.svg");
+    }
+
+    .twitter {
+      background: url("/Assets/Twitter\ Icon.svg");
+    }
+  }
+}
