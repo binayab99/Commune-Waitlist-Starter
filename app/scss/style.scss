@@ -15,8 +15,8 @@ body {
   margin: 0;
   font-family: "Nunito", sans-serif;
   font-size: 18px;
-  color: hsl(255, 43%, 28%);
-  background-color: hsl(218, 80%, 98%);
+  color: rgb(84, 84, 84);
+  background-color: rgb(246, 249, 254);
 }
 
 h1 {
@@ -28,7 +28,7 @@ h1 {
 
 a {
   text-decoration: none;
-  color: hsl(0, 0%, 33%);
+  color: rgb(84, 84, 84);
   font-size: 1.1rem;
 }
 
@@ -38,9 +38,10 @@ form {
 }
 
 input {
-  height: 50px;
+  height: 60px;
   width: 350px;
   padding-left: 1rem;
+  font-size: 1.1rem;
   color: rgb(181, 182, 183);
   border-radius: 10px;
   border: 1px solid rgb(221, 223, 231);
@@ -51,11 +52,11 @@ input {
 }
 
 button {
-  background-color: hsl(255, 43%, 28%);
+  background-color: rgb(56, 41, 102);
   color: white;
   border: 0;
   font-size: 1.1rem;
-  height: 50px;
+  height: 60px;
   width: 146px;
   border-radius: 5px;
 
@@ -115,12 +116,13 @@ header {
       &:first-of-type {
         background-color: hsl(255, 43%, 28%);
         color: hsl(258, 43%, 83%);
-        width: 480px;
+        width: 520px;
         text-align: center;
         padding: 0.5rem 0;
         border-radius: 20px;
 
         a {
+          font-weight: 600;
           color: hsl(258, 43%, 83%);
           text-decoration: underline;
         }
@@ -143,6 +145,10 @@ header {
 }
 
 footer {
+  p {
+    font-weight: 600;
+  }
+
   .companies {
     display: flex;
     gap: 1rem;
