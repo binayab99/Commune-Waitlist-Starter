@@ -1,5 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap");
 
+$breakpoints-up: (
+  "medium": "640px",
+  "large": "1024px",
+  "xlarge": "1400px",
+);
+
+$breakpoints-down: (
+  "small": "639px",
+  "medium": "1023px",
+  "large": "1399px",
+);
+
+@mixin breakpoint-up($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+}
+
 html {
   box-sizing: border-box;
 }
@@ -20,10 +44,10 @@ body {
 }
 
 h1 {
-  font-size: 3.5rem;
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
   font-weight: 700;
   margin: 0;
-  width: 700px;
+  width: clamp(300px, 80vw, 700px);
 }
 
 a {
@@ -34,12 +58,18 @@ a {
 
 form {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
+
+  @include breakpoint-down(medium) {
+    justify-content: center;
+    margin: 2rem 0;
+  }
 }
 
 input {
   height: 60px;
-  width: 350px;
+  width: clamp(330px, 40vw, 350px);
   padding-left: 1rem;
   font-size: 1.1rem;
   color: rgb(181, 182, 183);
@@ -63,6 +93,10 @@ button {
   &:hover {
     cursor: pointer;
   }
+
+  @include breakpoint-down(small) {
+    width: 330px;
+  }
 }
 
 .container {
@@ -70,6 +104,14 @@ button {
 
   padding: 3rem 7rem;
   margin: auto;
+
+  @include breakpoint-down(medium) {
+    padding: 3rem 5rem;
+  }
+
+  @include breakpoint-down(small) {
+    padding: 3rem 2rem;
+  }
 }
 
 header {
@@ -91,16 +133,26 @@ header {
       align-items: center;
       gap: 2rem;
     }
+
+    @include breakpoint-down(medium) {
+      display: none;
+    }
   }
 
   .menu {
     display: none;
+    margin: auto 0;
 
-    .dash {
-      border: 2px;
-      width: 10px;
-      height: 2px;
-      color: black;
+    span {
+      display: block;
+      width: 33px;
+      height: 4px;
+      margin-bottom: 5px;
+      background-color: black;
+    }
+
+    @include breakpoint-down(medium) {
+      display: block;
     }
   }
 }
@@ -112,14 +164,25 @@ header {
   &-text {
     flex: 2;
 
+    h1 {
+      @include breakpoint-down(medium) {
+        margin: 0 auto;
+        padding: 1.5rem 0;
+      }
+    }
+
     p {
       &:first-of-type {
         background-color: hsl(255, 43%, 28%);
         color: hsl(258, 43%, 83%);
-        width: 520px;
+        width: clamp(300px, 50vw, 520px);
         text-align: center;
         padding: 0.5rem 0;
         border-radius: 20px;
+
+        @include breakpoint-down(medium) {
+          margin: 0 auto;
+        }
 
         a {
           font-weight: 600;
@@ -129,8 +192,16 @@ header {
       }
 
       &:nth-of-type(2) {
-        width: 730px;
+        width: clamp(340px, 60vw, 730px);
+
+        @include breakpoint-down(medium) {
+          margin: 0 auto;
+        }
       }
+    }
+
+    @include breakpoint-down(medium) {
+      text-align: center;
     }
   }
 
@@ -141,6 +212,10 @@ header {
     background: url(/Assets/Illustration.png);
     background-repeat: no-repeat;
     background-size: contain;
+
+    @include breakpoint-down(medium) {
+      display: none;
+    }
   }
 }
 
@@ -151,6 +226,7 @@ footer {
 
   .companies {
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
 
     .icon {
