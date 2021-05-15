@@ -4,5 +4,6 @@
         "behance",
         "waitlist",
         "xlarge"
-    ]
+    ],
+    "liveServer.settings.port": 5501
 }
